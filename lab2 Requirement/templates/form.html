@@ -1,0 +1,44 @@
+
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+
+    <body>
+        <h1>Please fill the form:</h1>
+
+        <form action="/submit" method="POST" onsubmit="return validateForm()"><!--when click submit go to second page -->
+
+            <h3>Enter Your name:</h3>
+            <input type="text" id="name" name="name"><br><br> 
+
+            <h3>Enter Your Age:</h3>
+            <input type="number" id="age" name="age"><br><br>
+
+            
+
+            <h4 for="email">Email:</h4>
+            <input type="email" id="email" name="email" required>
+            <br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <script>
+            function validateForm() {
+                var name = document.getElementById("name").value;
+                var age = document.getElementById("age").value;
+                var email = document.getElementById("email").value;
+        
+                if (name === "" || age === "" || email === "") {
+                    alert("Please fill in all fields.");
+                    return false;
+                }
+        
+                return true;
+            }
+        </script>
+        
+        
+    </body>
+</html>
